@@ -10,7 +10,7 @@
 ## build image
 Give a shopware version here (shop_version=...)
 
-docker build --build-arg shop_version=5.2.21 -t php5swag 
+docker build --build-arg shop_version=5.2.21 -t php5swag .
 
 with proxy:
 docker build --build-arg https_proxy=protocol://ip:port --build-arg http_proxy=protocol://ip:port --build-arg shop_version=5.2.21 -t php5swag .
