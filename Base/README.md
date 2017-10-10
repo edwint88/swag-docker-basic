@@ -1,3 +1,3 @@
-#Base Docker Image
+# Base Docker Image
 
-##To Build the docker images follow the README.md files in each directory
+## To Build the docker images follow the README.md files in each directory
