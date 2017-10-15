@@ -1,6 +1,6 @@
 #Dockerfile 
-FROM php:7.0.22-apache
-LABEL Description="This image is used to start the php:7.0.22" Vendor="niwde" Version="1.0"
+FROM php:7.0.24-apache
+LABEL Description="This image is used to start the php:7.0.24" Vendor="niwde" Version="1.0"
 
 # apache2 rewrite mode
 RUN a2enmod rewrite
