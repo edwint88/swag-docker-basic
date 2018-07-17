@@ -3,8 +3,6 @@ FROM niwde/server-php7.0
 LABEL Description="This image is used to installs mysql 5.6 for Plugins Development" Vendor="niwde" Version="1.0"
 #name niwde/php7-mysql5.6
 
-ADD 80proxy /etc/apt/apt.conf.d/
-
 RUN apt-get install -y lsb-release
 RUN apt-get install -y wget
 RUN apt-get install -y debconf-utils
