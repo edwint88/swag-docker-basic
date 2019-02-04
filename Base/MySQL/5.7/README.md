@@ -1,0 +1,1 @@
+docker build -t edwint88/1container . 

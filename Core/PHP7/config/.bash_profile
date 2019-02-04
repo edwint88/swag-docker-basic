@@ -1,1 +1,1 @@
-cd /var/www/html/shopware 
+cd /var/www/html/ 
