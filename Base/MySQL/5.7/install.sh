@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "prepare mysql"
-debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-codename select strech'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-codename select stretch'
 debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-distro select debian'
 debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-url string http://repo.mysql.com/apt/'
 debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-preview select '

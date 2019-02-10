@@ -1,1 +1,1 @@
-docker build -t edwint88/php7.3 .
+docker build -t edwint88/php7.3-dev .

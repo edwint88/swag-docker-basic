@@ -1,0 +1,25 @@
+#Dockerfile 
+FROM edwint88/1container-dev
+LABEL Description="This image is used to run shopware for developers" Vendor="niwde" Version="1.0"
+
+ARG shop_version
+ARG shop_branch
+
+# Add scripts
+ADD ./scripts/installWebshop.sh /home/webshop/scripts/
+ADD ./scripts/initDB.sh /home/webshop/scripts/
+
+# RUN apt-get update && apt-get install openjdk-8-jre -y
+
+RUN chmod 777 /home/webshop/scripts/initDB.sh && /home/webshop/scripts/initDB.sh
+RUN chmod 777 /home/webshop/scripts/installWebshop.sh && /home/webshop/scripts/installWebshop.sh
+
+#start services
+ADD ./scripts/startup.sh /opt/startup.sh
+RUN chown root:webshop /opt/startup.sh && chmod 777 /opt/startup.sh
+
+EXPOSE 80
+EXPOSE 22
+EXPOSE 3306
+
+CMD /opt/startup.sh
