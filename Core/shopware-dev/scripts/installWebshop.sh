@@ -40,8 +40,17 @@ ant build-unit
 echo 'finish build-unit'
 
 
+# Download Shopware test_images.zip
+cd /home/webshop/Downloads/
+wget -O test_images.zip http://releases.s3.shopware.com/test_images_since_5.1.zip
+unzip -d /var/www/html/shopware /home/webshop/Downloads/test_images.zip
+
+cd /var/www/html
+echo "php_value memory_limit 512M" >> shopware/.htaccess
+echo "php_value upload_max_filesize 16M" >> shopware/.htaccess
+
+bash shopware/var/cache/clear_cache.sh
+
 # set the rights to www-data and webshop
-chown -R www-data:www-data /var/www/html/ \
-	&& chmod -R 777 /var/www/html/
-chown -R webshop:www-data /home/webshop \
-	&& chmod -R 777 /home/webshop
+chown -R www-data:www-data /var/www/html/ && chmod -R 777 /var/www/html/
+chown -R webshop:www-data /home/webshop && chmod -R 777 /home/webshop
